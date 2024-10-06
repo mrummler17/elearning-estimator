@@ -1,23 +1,17 @@
 document.addEventListener('DOMContentLoaded', function() {
     console.log("Script loaded");
 
-    document.getElementById('startBtn').addEventListener('click', function() {
-        document.getElementById('projectDetails').style.display = 'block';
-    });
-
-    document.getElementById('nextBtn').addEventListener('click', function() {
-        const projectType = document.getElementById('projectType').value;
-        if (projectType) {
-            document.getElementById('projectDetails').style.display = 'none';
-            document.getElementById('interactivityLevel').style.display = 'block';
-        } else {
-            alert('Please select a project type.');
-        }
-    });
+    const descriptions = {
+        1: "Level 1 - Basic: Simple slideshows or text-based lessons, with basic quizzes and limited multimedia (like images or infographics). Minimal interactions.",
+        2: "Level 2 - Simple Interactivity: Includes some interactivity such as multiple-choice quizzes, drag-and-drop exercises, and basic animations. May feature audio and basic animations.",
+        3: "Level 3 - Moderate Interactivity: More engaging content with multimedia integration (audio, video) and interactive scenarios. Learners explore through simulations and decision-making exercises.",
+        4: "Level 4 - Complex Interactivity: High-end simulations, complex branching scenarios, and assessments. Could include gamification or highly custom interactions.",
+        5: "Level 5 - Immersive: Fully immersive experiences, including virtual or augmented reality and complex simulations with custom graphics, animations, and audio."
+    };
 
     document.getElementById('calculateBtn').addEventListener('click', function() {
         const level = document.getElementById('level').value;
-        let estimate;
+        let estimate, description;
 
         switch (level) {
             case "1":
@@ -39,6 +33,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 estimate = "Please select a valid level.";
         }
 
-        alert(`Estimated development time: ${estimate}`);
+        // Show the estimate, description, and source URL
+        description = descriptions[level] || "Please select a valid level.";
+        const sourceURL = '<a href="https://yourelearningworld.com/accurate-elearning-development-time/">Source: Your eLearning World</a>';
+
+        document.getElementById('description').innerHTML = `<strong>Estimated Development Time:</strong> ${estimate}<br><strong>Description:</strong> ${description}<br>${sourceURL}`;
     });
 });
