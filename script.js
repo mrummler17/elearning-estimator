@@ -21,3 +21,29 @@ document.getElementById('nextBtn').addEventListener('click', function() {
         alert('Please select a project type.');
     }
 });
+document.getElementById('calculateBtn').addEventListener('click', function() {
+    const level = document.getElementById('level').value;
+    let estimate;
+
+    switch (level) {
+        case "1":
+            estimate = "50-100 hours";
+            break;
+        case "2":
+            estimate = "100-200 hours";
+            break;
+        case "3":
+            estimate = "200-400 hours";
+            break;
+        case "4":
+            estimate = "400-600 hours";
+            break;
+        case "5":
+            estimate = "600+ hours";
+            break;
+        default:
+            estimate = "Please select a valid level.";
+    }
+
+    alert(`Estimated development time: ${estimate}`);
+});
