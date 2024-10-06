@@ -10,3 +10,14 @@ document.getElementById('nextBtn').addEventListener('click', function() {
         alert('Please select a project type.');
     }
 });
+document.getElementById('nextBtn').addEventListener('click', function() {
+    const projectType = document.getElementById('projectType').value;
+    
+    if (projectType) {
+        // Hide project details and show interactivity level selection
+        document.getElementById('projectDetails').style.display = 'none';
+        document.getElementById('interactivityLevel').style.display = 'block';
+    } else {
+        alert('Please select a project type.');
+    }
+});
