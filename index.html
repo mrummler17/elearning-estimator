@@ -11,7 +11,9 @@
         <h1>Welcome to E-Learning Project Estimator</h1>
         <button id="startBtn">Start New Estimate</button>
     </header>
+
     <main>
+        <!-- Project Details Section -->
         <section id="projectDetails" style="display:none;">
             <h2>Project Details</h2>
             <label for="projectType">Select Project Type:</label>
@@ -21,22 +23,25 @@
             </select>
             <button id="nextBtn">Next</button>
         </section>
+
+        <!-- Interactivity Level Section -->
+        <section id="interactivityLevel" style="display:none;">
+            <h2>Select Interactivity Level</h2>
+            <label for="level">Choose Level:</label>
+            <select id="level">
+                <option value="1">Level 1 - Basic</option>
+                <option value="2">Level 2 - Simple Interactivity</option>
+                <option value="3">Level 3 - Moderate Interactivity</option>
+                <option value="4">Level 4 - Complex Interactivity</option>
+                <option value="5">Level 5 - Immersive</option>
+            </select>
+            <button id="calculateBtn">Calculate Time</button>
+        </section>
+
+        <!-- Description and Source Display Section -->
+        <div id="description" style="margin-top: 20px;"></div>
     </main>
+
     <script src="script.js"></script>
 </body>
 </html>
-<section id="interactivityLevel" style="display:none;">
-    <h2>Select Interactivity Level</h2>
-    <label for="level">Choose Level:</label>
-    <select id="level">
-        <option value="1">Level 1 - Basic</option>
-        <option value="2">Level 2 - Simple Interactivity</option>
-        <option value="3">Level 3 - Moderate Interactivity</option>
-        <option value="4">Level 4 - Complex Interactivity</option>
-        <option value="5">Level 5 - Immersive</option>
-    </select>
-    <button id="calculateBtn">Calculate Time</button>
-</section>
-<div id="description" style="margin-top: 20px;"></div>
-<button id="calculateBtn">Calculate Time</button>
-<div id="description" style="margin-top: 20px;"></div>

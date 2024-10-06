@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     console.log("Script loaded");
 
+    // Descriptions for each level of interactivity
     const descriptions = {
         1: "Level 1 - Basic: Simple slideshows or text-based lessons, with basic quizzes and limited multimedia (like images or infographics). Minimal interactions.",
         2: "Level 2 - Simple Interactivity: Includes some interactivity such as multiple-choice quizzes, drag-and-drop exercises, and basic animations. May feature audio and basic animations.",
@@ -9,6 +10,23 @@ document.addEventListener('DOMContentLoaded', function() {
         5: "Level 5 - Immersive: Fully immersive experiences, including virtual or augmented reality and complex simulations with custom graphics, animations, and audio."
     };
 
+    // Start button - Show Project Details
+    document.getElementById('startBtn').addEventListener('click', function() {
+        document.getElementById('projectDetails').style.display = 'block';
+    });
+
+    // Next button - Show Interactivity Level after Project Type is selected
+    document.getElementById('nextBtn').addEventListener('click', function() {
+        const projectType = document.getElementById('projectType').value;
+        if (projectType) {
+            document.getElementById('projectDetails').style.display = 'none';
+            document.getElementById('interactivityLevel').style.display = 'block';
+        } else {
+            alert('Please select a project type.');
+        }
+    });
+
+    // Calculate button - Show Estimated Time, Description, and Source URL
     document.getElementById('calculateBtn').addEventListener('click', function() {
         const level = document.getElementById('level').value;
         let estimate, description;
@@ -33,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 estimate = "Please select a valid level.";
         }
 
-        // Show the estimate, description, and source URL
+        // Show estimate, description, and source link
         description = descriptions[level] || "Please select a valid level.";
         const sourceURL = '<a href="https://yourelearningworld.com/accurate-elearning-development-time/">Source: Your eLearning World</a>';
 
